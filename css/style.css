@@ -1,0 +1,186 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50; /* Green background to represent nature */
+    color: white;
+    padding: 15px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Align items to space out */
+    align-items: center; /* Center vertically */
+}
+
+nav h2 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Larger font size for emphasis */
+}
+
+nav ul {
+    list-style: none; /* Remove default bullet points */
+    display: flex; /* Use flexbox for layout */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px; /* Space between nav items */
+}
+
+nav ul li a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s; /* Smooth color change */
+}
+
+nav ul li a:hover {
+    color: #f9f9f9; /* Lighten color on hover */
+}
+
+/* Main Styles */
+.main {
+    padding: 20px; /* Padding around the main content */
+}
+
+.banner h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4CAF50;
+}
+
+.banner p{
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin:0 20px 20px 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333; /* Dark background for contrast */
+    color: white;
+    text-align: center; /* Center text */
+    padding: 15px 0; /* Padding for spacing */
+    position: relative; /* Position for any future adjustments */
+    bottom: 0; /* Align footer to the bottom */
+    width: 100%; /* Full width */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav h2 {
+        font-size: 1.2rem; /* Adjust header size for mobile */
+    }
+
+    nav ul li {
+        margin-left: 10px; /* Reduce space between items */
+    }
+
+    footer p {
+        font-size: 0.8rem; /* Adjust footer font size for mobile */
+    }
+}
+
+
+
+
+
+
+/* products */
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows products to wrap to the next line if needed */
+    justify-content: space-between; /* Space between products */
+}
+
+.product-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 20%; /* Set a width for each product */
+    margin-bottom: 20px; /* Space between rows */
+    text-align: center; /* Center text for better alignment */
+}
+
+.product-image img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-name {
+    font-size: 24px;
+    color: #333;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.quantity-selector {
+    margin: 15px 0;
+}
+
+.add-to-cart , .delete-cart{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-to-cart:hover , .delete-cart:hover{
+    background-color: #218838;
+}
+
+.cart-summary {
+    margin-top: 30px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.cart-summary h2 {
+    margin: 0 0 10px;
+}
+
+
