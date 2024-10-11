@@ -3,6 +3,10 @@
 ## Description
 A simple e-commerce application for browsing and purchasing Ayurvedic products, featuring dynamic cart functionality.
 
+## UI of website
+![image](https://github.com/user-attachments/assets/edff0f99-e7f8-4c0a-b76c-fa4bd8ae5848)
+
+
 ## Features
 - Display Ayurvedic products with images, descriptions, and prices.
 - Add products to cart with customizable quantities.
