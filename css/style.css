@@ -1,11 +1,8 @@
-
-
-*{
+/* Resetting margin and padding for all elements */
+* {
     margin: 0;
     padding: 0;
 }
-
-
 
 /* General Styles */
 body {
@@ -23,17 +20,20 @@ header {
     padding: 15px 20px;
 }
 
+/* Navigation bar with flex layout */
 nav {
     display: flex;
-    justify-content: space-between; /* Align items to space out */
+    justify-content: space-between; /* Align items with space between them */
     align-items: center; /* Center vertically */
 }
 
+/* Header title styling */
 nav h2 {
     margin: 0; /* Remove default margin */
     font-size: 1.5rem; /* Larger font size for emphasis */
 }
 
+/* Navigation list styling */
 nav ul {
     list-style: none; /* Remove default bullet points */
     display: flex; /* Use flexbox for layout */
@@ -41,38 +41,43 @@ nav ul {
     padding: 0;
 }
 
+/* Individual navigation item */
 nav ul li {
     margin-left: 20px; /* Space between nav items */
 }
 
+/* Links inside navigation */
 nav ul li a {
     color: white; /* Link color */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s; /* Smooth color change */
 }
 
+/* Hover effect for navigation links */
 nav ul li a:hover {
     color: #f9f9f9; /* Lighten color on hover */
 }
 
-/* Main Styles */
+/* Main content padding */
 .main {
     padding: 20px; /* Padding around the main content */
 }
 
-.banner h2{
+/* Banner styling */
+.banner h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #4CAF50;
+    color: #4CAF50; /* Green text to match theme */
 }
 
-.banner p{
+/* Banner paragraph styling */
+.banner p {
     border: 1px solid #ddd;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    margin:0 20px 20px 20px;
+    margin: 0 20px 20px 20px;
 }
 
 /* Footer Styles */
@@ -86,78 +91,99 @@ footer {
     width: 100%; /* Full width */
 }
 
+/* Footer text styling */
 footer p {
     margin: 0; /* Remove default margin */
     font-size: 0.9rem; /* Slightly smaller font size */
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-    nav h2 {
-        font-size: 1.2rem; /* Adjust header size for mobile */
-    }
-
-    nav ul li {
-        margin-left: 10px; /* Reduce space between items */
-    }
-
-    footer p {
-        font-size: 0.8rem; /* Adjust footer font size for mobile */
-    }
-}
-
-
-
-
-
-
-/* products */
-
+/* Product container styling for larger screens */
 .products-container {
     display: flex;
-    flex-wrap: wrap; /* Allows products to wrap to the next line if needed */
-    justify-content: space-between; /* Space between products */
+    flex-wrap: wrap; /* Allows products to wrap to the next line */
+    justify-content: space-between; /* Space between product items */
 }
 
+/* Individual product container */
 .product-container {
     border: 1px solid #ddd;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    width: 20%; /* Set a width for each product */
+    width: 20%; /* Set width for each product */
     margin-bottom: 20px; /* Space between rows */
-    text-align: center; /* Center text for better alignment */
+    text-align: center; /* Center text for alignment */
 }
 
+/* Product image styling */
 .product-image img {
-    max-width: 200px;
-    height: auto;
+    max-width: 100%; /* Ensure image scales with its container */
+    height: auto; /* Maintain image aspect ratio */
     border-radius: 8px;
 }
 
+/* Product name styling */
 .product-name {
     font-size: 24px;
     color: #333;
 }
 
+/* Product description styling */
 .product-description {
     font-size: 16px;
     color: #666;
     margin: 10px 0;
 }
 
+/* Product price styling */
 .product-price {
     font-size: 20px;
     color: #007BFF;
     font-weight: bold;
 }
 
+/* Quantity selector container */
 .quantity-selector {
     margin: 15px 0;
 }
 
-.add-to-cart , .delete-cart{
+/* Star Rating Styles */
+.rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.star {
+    font-size: 30px;
+    color: #ccc; /* Default grey color for stars */
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect - Optional */
+
+/* Apply color to all previous stars when hovering */
+.star:hover,
+.star:hover ~ .star {
+    color: #ddd; /* Grey out stars after the hovered star */
+}
+
+/* Apply yellow color to the hovered star and all stars before it */
+.star:hover,
+.star ~ .star:hover {
+    color: #ffdd00; /* Yellow color for stars on hover */
+}
+
+
+/* Selected Stars */
+.star.selected {
+    color: #ffdd00; /* Solid yellow when selected */
+}
+
+/* Add to cart and delete cart button styles */
+.add-to-cart, .delete-cart {
     background-color: #28a745;
     color: #fff;
     border: none;
@@ -167,10 +193,12 @@ footer p {
     font-size: 16px;
 }
 
-.add-to-cart:hover , .delete-cart:hover{
+/* Hover effect for buttons */
+.add-to-cart:hover, .delete-cart:hover {
     background-color: #218838;
 }
 
+/* Cart summary container */
 .cart-summary {
     margin-top: 30px;
     border: 1px solid #ddd;
@@ -179,8 +207,67 @@ footer p {
     border-radius: 8px;
 }
 
+/* Cart summary heading */
 .cart-summary h2 {
     margin: 0 0 10px;
 }
 
+/* Responsive Design for mobile devices */
+@media (max-width: 600px) {
+    /* Adjust header font size for smaller screens */
+    nav h2 {
+        font-size: 1.2rem;
+    }
 
+    /* Reduce space between navigation items */
+    nav ul li {
+        margin-left: 10px;
+    }
+
+    /* Adjust footer font size for mobile */
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    /* Stack products vertically for mobile view */
+    .products-container {
+        flex-direction: column; /* Change layout to column */
+        align-items: center; /* Center products in column layout */
+    }
+
+    /* Increase product container width for mobile screens */
+    .product-container {
+        width: 90%; /* Take up most of the screen width */
+        margin-bottom: 20px;
+    }
+
+    /* Adjust product image size for mobile */
+    .product-image img {
+        max-width: 100%; /* Ensure the image takes up full width */
+        height: auto; /* Maintain image aspect ratio */
+    }
+
+    /* Adjust font sizes for smaller screens */
+    .product-name {
+        font-size: 20px;
+    }
+
+    .product-description {
+        font-size: 14px;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+    .quantity-selector label, 
+    .quantity-selector input {
+        font-size: 14px; /* Adjust quantity label/input size */
+    }
+
+    /* Adjust button size and padding for mobile */
+    .add-to-cart, .delete-cart {
+        font-size: 14px; /* Reduce button font size */
+        padding: 8px 12px; /* Adjust button padding */
+    }
+}

@@ -1,3 +1,7 @@
+
+//--------------------------------------------------------------- Products data ---------------------------------------------------------------------------
+
+
 const products = [
     {
         name: "Ayurvedic Face Wash",
@@ -26,12 +30,15 @@ const products = [
     // Add more products as needed
 ];
 
+//----------------------------------------------------------------Display products------------------------------------------------------------------------
+
 function displayProducts() {
     const productsContainer = document.querySelector('.products-container');
+    productsContainer.innerHTML = '';  // Clear the container before adding products
 
     products.forEach((product, index) => {  // Use index to create unique identifiers
         const productElement = document.createElement('div');
-        productElement.className = 'product-container';
+        productElement.className = 'product-container'; 
         
         productElement.innerHTML = `
             <div class="product-image">
@@ -41,6 +48,14 @@ function displayProducts() {
                 <h1 class="product-name">${product.name}</h1>
                 <p class="product-description">${product.description}</p>
                 <p class="product-price">Rs. ${product.price.toFixed(2)}</p>
+                
+                <div class="rating">
+                    <span class="star" data-value="5">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="1">&#9733;</span>
+                </div>
                 
                 <div class="quantity-selector">
                     <label for="quantity-${index}">Quantity:</label>
@@ -52,7 +67,41 @@ function displayProducts() {
         
         productsContainer.appendChild(productElement);
     });
+
+    // After products are rendered, call the function to attach star functionality
+    attachStarClickEvents();
 }
+
+//---------------------------------------------------------------------Star functionality-----------------------------------------------------
+
+function attachStarClickEvents() {
+    // Select all product containers (for multiple products)
+    document.querySelectorAll('.product-container').forEach(container => {
+        // Select all stars in the current product container
+        const stars = container.querySelectorAll('.star');
+
+        // Add click event listener to each star
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                // Reset all stars by removing the 'selected' class
+                stars.forEach(s => s.classList.remove('selected'));
+
+                // Add the 'selected' class to the clicked star and all stars before it
+                for (let i = 0; i <= index; i++) {
+                    stars[i].classList.add('selected');
+                }
+            });
+        });
+    });
+}
+
+// Call the displayProducts function to render products on the page and set up stars
+displayProducts();
+
+
+
+//----------------------------------------------------------------------Cart functionality---------------------------------------------------------------
+
 
 // Initialize an empty cart array to store cart items
 let cartItems = [];
@@ -92,6 +141,8 @@ function addToCart(productName, productPrice, quantityInputId) {
     updateCartSummary();
 }
 
+//----------------------------------------------------- Display cart summary------------------------------------------------------------------------------
+
 // Function to update the cart summary display
 function updateCartSummary() {
     // Reset cart summary text
@@ -112,11 +163,11 @@ function updateCartSummary() {
     document.getElementById('cart-total').innerText = `Total Price: Rs. ${totalCartPrice.toFixed(2)}`;
 }
 
+//----------------------------------------------------- Clear cart button functionality -------------------------------------------------------------------
+
 function clearCart() {
     cartItems = []; // Reset the cartItems array
     updateCartSummary(); // Update the summary to reflect the cleared cart
     alert("Your cart has been cleared!"); // Optional: Notify the user
 }
 
-// Display products on page load
-displayProducts();
