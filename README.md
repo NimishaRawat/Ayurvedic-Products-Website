@@ -15,7 +15,7 @@ A simple e-commerce application for browsing and purchasing Ayurvedic products, 
 - JavaScript
 
 ## Getting Started
-1. Clone the repository:
+1. Clone the repository: https://github.com/NimishaRawat/Ayurvedic-Products-Website/tree/main
 2. Navigate to the project directory:
 3. Open `index.html` in your web browser.
 
